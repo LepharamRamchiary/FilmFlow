@@ -4,6 +4,7 @@ import { FaTv } from "react-icons/fa6";
 import { IoIosSearch } from "react-icons/io";
 import { CiMenuBurger } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const options = [
@@ -58,11 +59,14 @@ const NavBar = () => {
         <ul
           className={`${showMenu || !isSmallScreen ? "flex" : "hidden"} ${
             isSmallScreen
-              ? "absolute flex-col top-28 w-full bg-slate-400 text-white font-bold items-center justify-center p-5 h-auto gap-5 text-base"
+              ? "absolute flex-col top-28 w-full bg-slate-400 z-50 text-white font-bold items-center justify-center p-5 h-auto gap-5 text-base"
               : "ml-10 md:ml-12 lg:ml-10 gap-4 md:gap-8 lg:gap-10 text-base md:text-base lg:text-lg"
           } text-white items-center`}
         >
-          <li>HOME</li>
+          <Link to="/">
+            <li>HOME</li>
+          </Link>
+
           <li
             onMouseEnter={() => {
               setBollywoodHovered(true);
@@ -75,9 +79,14 @@ const NavBar = () => {
               Bollywood <IoIosArrowDown />
             </button>
             {bollywoodHovered && (
-              <ul className="absolute text-black bg-white/[0.2] py-1 px-3 md:py-1 md:px-3 sm:py-1 sm:px-3 lg:py-1 lg:px-3 font-extralight">
+              <ul className="absolute z-50 text-black bg-white/[0.7] py-1 px-3 md:py-1 md:px-3 sm:py-1 sm:px-3 lg:py-1 lg:px-3 font-extralight">
                 {options.map((option, index) => (
-                  <li key={index}>{option}</li>
+                  <li
+                    key={index}
+                    className="cursor-pointer hover:text-sky-700 border-solid border-b-2 border-slate-400 justify-center items-center p-2"
+                  >
+                    {option}
+                  </li>
                 ))}
               </ul>
             )}
@@ -94,9 +103,14 @@ const NavBar = () => {
               Hollywood <IoIosArrowDown />
             </button>
             {hollywoodHovered && (
-              <ul className="absolute text-black bg-white/[0.2] py-1 px-3 md:py-1 md:px-3 sm:py-1 sm:px-3 lg:py-1 lg:px-3 font-extralight">
+              <ul className="absolute z-50 text-black bg-white/[0.7] py-1 px-3 md:py-1 md:px-3 sm:py-1 sm:px-3 lg:py-1 lg:px-3 font-extralight">
                 {options.map((option, index) => (
-                  <li key={index}>{option}</li>
+                  <li
+                    key={index}
+                    className="cursor-pointer hover:text-sky-700 border-solid border-b-2 border-slate-400 justify-center items-center p-2"
+                  >
+                    {option}
+                  </li>
                 ))}
               </ul>
             )}
@@ -116,9 +130,14 @@ const NavBar = () => {
               TvShows <IoIosArrowDown />
             </button>
             {tvShowsHovered && (
-              <ul className="absolute text-black bg-white/[0.2] py-1 px-3 md:py-1 md:px-3 sm:py-1 sm:px-3 lg:py-1 lg:px-3 font-extralight">
+              <ul className="absolute z-50 text-black bg-white/[0.7] py-1 px-3 md:py-1 md:px-3 sm:py-1 sm:px-3 lg:py-1 lg:px-3 font-extralight">
                 {options.map((option, index) => (
-                  <li key={index}>{option}</li>
+                  <li
+                    key={index}
+                    className="cursor-pointer hover:text-sky-700 border-solid border-b-2 border-slate-400 justify-center items-center p-2"
+                  >
+                    {option}
+                  </li>
                 ))}
               </ul>
             )}
