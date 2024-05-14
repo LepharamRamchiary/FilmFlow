@@ -5,16 +5,20 @@ import Feed from "./components/Feed";
 import Details from './components/Details';
 import Footer from "./components/Footer";
 
+import { AppContext } from './context/contextApi';
+
 function App() {
   return (
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path='/' exact element={<Feed />} />
-        <Route path='/video' element={<Details />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+    <AppContext>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path='/' exact element={<Feed />} />
+          <Route path='/video' element={<Details />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </AppContext>
   );
 }
 
