@@ -42,7 +42,7 @@ const NavBar = () => {
     };
   }, []);
   return (
-    <div className="bg-slate-700 h-12 w-full md:h-[45px] sm:h-[25px] lg:[45px] md:w-full flex items-center justify-between md:items-center md;justify-between sm:items-center sm:justify-between lg:items-center lg:justify-between">
+    <div className="bg-slate-700 h-12 w-full md:h-[45px] sm:h-[25px] lg:[45px] md:w-full flex items-center justify-between md:items-center md:justify-between sm:items-center sm:justify-between lg:items-center lg:justify-between">
       <div className="flex items-center">
         {showMenu ? (
           <IoMdClose
@@ -60,7 +60,7 @@ const NavBar = () => {
           className={`${showMenu || !isSmallScreen ? "flex" : "hidden"} ${
             isSmallScreen
               ? "absolute flex-col top-28 w-full bg-slate-400 z-50 text-white font-bold items-center justify-center p-5 h-auto gap-5 text-base"
-              : "ml-10 md:ml-12 lg:ml-10 gap-4 md:gap-8 lg:gap-10 text-base md:text-base lg:text-lg"
+              : "m-11 md:m-10 sm:mr-8 gap-4 md:gap-8 lg:gap-10 text-base md:text-base lg:text-lg"
           } text-white items-center`}
         >
           <Link to="/">
@@ -79,11 +79,11 @@ const NavBar = () => {
               Bollywood <IoIosArrowDown />
             </button>
             {bollywoodHovered && (
-              <ul className="absolute z-50 text-black bg-white/[0.7] py-1 px-3 md:py-1 md:px-3 sm:py-1 sm:px-3 lg:py-1 lg:px-3 font-extralight">
+              <ul className="absolute z-50 text-white bg-slate-900/[0.7] py-1 px-3 md:py-1 md:px-3 sm:py-1 sm:px-3 lg:py-1 lg:px-3 font-extralight">
                 {options.map((option, index) => (
                   <li
                     key={index}
-                    className="cursor-pointer hover:text-sky-700 border-solid border-b-2 border-slate-400 justify-center items-center p-2"
+                    className="cursor-pointer hover:text-sky-600 border-solid border-b-2 border-slate-400 justify-center items-center p-2"
                   >
                     {option}
                   </li>
@@ -103,11 +103,11 @@ const NavBar = () => {
               Hollywood <IoIosArrowDown />
             </button>
             {hollywoodHovered && (
-              <ul className="absolute z-50 text-black bg-white/[0.7] py-1 px-3 md:py-1 md:px-3 sm:py-1 sm:px-3 lg:py-1 lg:px-3 font-extralight">
+              <ul className="absolute z-50 text-white bg-slate-900/[0.7] py-1 px-3 md:py-1 md:px-3 sm:py-1 sm:px-3 lg:py-1 lg:px-3 font-extralight">
                 {options.map((option, index) => (
                   <li
                     key={index}
-                    className="cursor-pointer hover:text-sky-700 border-solid border-b-2 border-slate-400 justify-center items-center p-2"
+                    className="cursor-pointer hover:text-sky-600 border-solid border-b-2 border-slate-400 justify-center items-center p-2"
                   >
                     {option}
                   </li>
@@ -130,11 +130,11 @@ const NavBar = () => {
               TvShows <IoIosArrowDown />
             </button>
             {tvShowsHovered && (
-              <ul className="absolute z-50 text-black bg-white/[0.7] py-1 px-3 md:py-1 md:px-3 sm:py-1 sm:px-3 lg:py-1 lg:px-3 font-extralight">
+              <ul className="absolute z-50 text-white bg-slate-900/[0.7] py-1 px-3 md:py-1 md:px-3 sm:py-1 sm:px-3 lg:py-1 lg:px-3 font-extralight">
                 {options.map((option, index) => (
                   <li
                     key={index}
-                    className="cursor-pointer hover:text-sky-700 border-solid border-b-2 border-slate-400 justify-center items-center p-2"
+                    className="cursor-pointer hover:text-sky-600 border-solid border-b-2 border-slate-400 justify-center items-center p-2"
                   >
                     {option}
                   </li>
@@ -144,7 +144,7 @@ const NavBar = () => {
           </li>
         </ul>
       </div>
-      <div className="relative mr-10 md:mr-12 sm:mr-8 lg:mr-10">
+      <div className="relative ml-[-40px]  mr-10 md:mr-12 sm:mr-8 lg:mr-10">
         <div className="group flex items-center">
           <div className="flex h-8 md:h-8 md:ml-8 md:pl-5 border border-[#303030] rounded-l-full rounded-r-full group-focus-within:border-blue-500 md:group-focus-within:ml-5 md:group-focus-within:pl-0">
             <div className="w-10 items-center justify-center hidden group-focus-within:md:flex">
@@ -153,7 +153,7 @@ const NavBar = () => {
             <input
               type="text"
               placeholder="Search..."
-              className="bg-transparent outline-none text-white pr-5 pl-5 md:pr-10 md:pl-0 w-40 md:group-focus-within:pl-0 md:w-60 lg:w-[400px]"
+              className="bg-transparent outline-none text-white pr-5 pl-5 md:pr-10 md:pl-0  md:group-focus-within:pl-0 w-60 sm:w-full md:w-40 lg:w-[400px]"
             />
           </div>
           <button className="absolute right-0 w-10 md:w-10 h-10 w md:h-10 flex items-center justify-center border border-l-0 border-[#303030] rounded-full bg-yellow-300">
