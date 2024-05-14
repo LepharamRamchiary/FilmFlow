@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Feed from "./components/Feed";
 import Details from './components/Details';
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path='/' exact element={<Feed />} />
         <Route path='/video' element={<Details />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
