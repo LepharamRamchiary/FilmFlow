@@ -1,14 +1,13 @@
 import axios from 'axios';
-const BASE_URL = 'https://youtube138.p.rapidapi.com';
+const BASE_URL = 'https://api.apilayer.com/youtube';
 
 const options = {
   params: {
-    hl: 'en',
-    gl: 'US'
+    q: '{q}' 
   },
   headers: {
-    'X-RapidAPI-Key': process.env.REACT_APP_MOVIE_API_KEY,
-    'X-RapidAPI-Host': 'youtube138.p.rapidapi.com'
+    'apikey': process.env.REACT_APP_MOVIE_API_KEY,
+    'Content-Type': 'application/json'
   }
 };
 
