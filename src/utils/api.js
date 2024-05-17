@@ -1,26 +1,26 @@
 import axios from "axios";
 
-const BASE_URL = "https://streaming-availability.p.rapidapi.com/shows/search/filters";
+const BASE_URL = "https://ott-details.p.rapidapi.com";
 
 const options = {
   params: {
-    country: '<REQUIRED>',
-    show_type: 'movie',
-    series_granularity: 'show',
-    order_by: 'original_title',
-    output_language: 'en',
-    order_direction: 'asc',
-    genres_relation: 'and'
+    start_year: '1970',
+    end_year: '2020',
+    min_imdb: '6',
+    max_imdb: '7.8',
+    genre: 'action',
+    language: 'english',
+    type: 'movie',
+    sort: 'latest',
+    page: '1'
   },
   headers: {
     'X-RapidAPI-Key': process.env.REACT_APP_MOVIE_API_KEY,
-    'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
+    'X-RapidAPI-Host': 'ott-details.p.rapidapi.com'
   }
 };
 
 export const fetchDataFromApi = async (url) => {
-    const {response} = await axios.get(`${BASE_URL}/${url}`, options);
-    return response;
-};
-
-
+  const {data} = await axios.get(`${BASE_URL}/${url}`, options);
+  return data;
+}
