@@ -7,16 +7,13 @@ const VideoCard = ({ video }) => {
 
   return (
     <Link to={`/video/${video?.imdbid}`}>
-      <div className="relative h-[250px] md:h-[300px] md:w-[200px] lg:h-[300px] lg:w-[200px] rounded-md shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]">
+      <div className="relative h-[250px] md:h-[300px] md:w-[200px] lg:h-[300px] lg:w-[200px] rounded-md shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] justify-center items-center gap-3">
           <ImageFallBack
             src={video?.imageurl[0]}
             alt={""}
             fallbackSrc={fallbackImageUrl}
-            className="h-[250px] md:h-[300px] md:w-[200px] lg:h-[300px] lg:w-[200px] rounded-md"
+            className="h-[250px] md:h-[300px] md:w-[200px] lg:h-[300px] lg:w-[200px] rounded-md justify-center items-center"
           />
-        {/* <h2 className="absolute bottom-3 p-2 line-clamp-0 text-white text-sm text-center justify-centerst">
-          {video?.title}
-        </h2> */}
       </div>
     </Link>
   );
