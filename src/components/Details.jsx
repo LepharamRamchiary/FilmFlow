@@ -8,17 +8,17 @@ import image from "../assets/download.jpg";
 
 const Details = () => {
   const [video, setVideo] = useState();
-  const { id } = useParams();
+  const { imdbid } = useParams();
   const { setLoading } = useContext(Context);
 
   useEffect(() => {
     document.getElementById("root").classList.add("custom-h");
     fetchVideoDetails();
-  }, [id]);
+  }, [imdbid]);
 
   const fetchVideoDetails = () => {
     setLoading(true);
-    fetchDataFromApi(`video/details/?id=${id}`).then((res) => {
+    fetchDataFromApi(`video/details/?id=${imdbid}`).then((res) => {
       console.log(res);
       setVideo(res);
       setLoading(false);
@@ -37,7 +37,7 @@ const Details = () => {
         </div>
         <div className="flex sm:w-1/2 md:w-1/2 lg:w-1/2 items-center justify-center md:h-[400px] lg:h-[500px]">
           <ReactPlayer
-            url={`https://www.youtube.com/watch?v=${id}`}
+            url={`https://ott-details.p.rapidapi.com/watch?v=${imdbid}`}
             controls
             style={{ backgroundColor: "#000000" }}
             className="h-[200px] w-full md:h-[400px] lg:h-[400px]"
