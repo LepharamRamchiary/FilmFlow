@@ -8,17 +8,17 @@ import image from "../assets/download.jpg";
 
 const Details = () => {
   const [video, setVideo] = useState();
-  const { imdbid } = useParams();
+  const { id } = useParams();
   const { setLoading } = useContext(Context);
 
   useEffect(() => {
     document.getElementById("root").classList.add("custom-h");
     fetchVideoDetails();
-  }, [imdbid]);
+  }, [id]);
 
   const fetchVideoDetails = () => {
     setLoading(true);
-    fetchDataFromApi(`video/details/?id=${imdbid}`).then((res) => {
+    fetchDataFromApi(`video/details/?id=${id}`).then((res) => {
       console.log(res);
       setVideo(res);
       setLoading(false);
@@ -36,13 +36,7 @@ const Details = () => {
           <h3 className="text-green-400 font-semibold mt-5">IMDB rating</h3>
         </div>
         <div className="flex sm:w-1/2 md:w-1/2 lg:w-1/2 items-center justify-center md:h-[400px] lg:h-[500px]">
-          <ReactPlayer
-            url={`https://ott-details.p.rapidapi.com/watch?v=${imdbid}`}
-            controls
-            style={{ backgroundColor: "#000000" }}
-            className="h-[200px] w-full md:h-[400px] lg:h-[400px]"
-            // playing={true}
-          />
+          <img src={video?.imageurl[0]} />
         </div>
       </div>
     </div>
