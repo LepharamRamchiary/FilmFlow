@@ -23,7 +23,7 @@ const Feed = () => {
                 return false;
               }
               return (
-                <VideoCard key={item?.imdbid} video={item} />
+                <VideoCard key={item?.imdbid} movie={item} />
               );
             })}
         </div>

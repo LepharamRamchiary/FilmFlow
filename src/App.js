@@ -14,7 +14,7 @@ function App() {
         <Header />
         <Routes>
           <Route path='/' exact element={<Feed />} />
-          <Route path='/video/:imdbid' element={<Details />} />
+          <Route path='/movie/:imdbid' element={<Details />} />
         </Routes>
         <Footer />
       </BrowserRouter>
