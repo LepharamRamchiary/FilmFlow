@@ -27,8 +27,9 @@ const Details = () => {
     } catch (error) {
       console.error("Error fetching video details:", error);
     } finally {
-      setLoading(false);
+      setLoading(false);    
     }
+    // Hello there
   };
 
   return (
